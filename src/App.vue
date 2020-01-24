@@ -1,9 +1,13 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <h1>Vue js</h1>
     <Post>
-      <h2>Components no Vue</h2>
-      <p>Componentes são uma das peças mais importantes no Vue</p>
+      <h2 slot="cabecalho">Components no Vue</h2>
+      <template slot="conteudo">
+        <p>Componentes são uma das peças mais importantes no Vue</p>
+        <span>...</span>
+      </template>
+      <small slot="rodape">Por Tarciso Torres</small>
     </Post>
   </div>
 </template>
@@ -18,5 +22,12 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .container {
+    width: 960px;
+    margin: auto;
+  }
+</style>
 
 
