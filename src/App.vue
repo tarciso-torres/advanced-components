@@ -4,10 +4,10 @@
     <Post>
       <h2 slot="cabecalho">Components no Vue</h2>
       <template slot="conteudo">
-        <p>Componentes são uma das peças mais importantes no Vue</p>
+        <p class="post-paragrafo">Componentes são uma das peças mais importantes no Vue</p>
         <span>...</span>
       </template>
-      <small slot="rodape">Por Tarciso Torres</small>
+      <small slot="rodape">Por {{ autor }}</small>
     </Post>
   </div>
 </template>
@@ -19,6 +19,11 @@ export default {
   name: 'app',
   components: {
     Post
+  },
+  data() {
+    return {
+      autor: 'Tarciso Torres'
+    }
   }
 }
 </script>
@@ -28,6 +33,7 @@ export default {
     width: 960px;
     margin: auto;
   }
+
 </style>
 
 

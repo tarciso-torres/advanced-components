@@ -33,4 +33,8 @@
         font-style: italic;
     }
 
+    .post-paragrafo {
+        color: green
+    }
+
 </style>
