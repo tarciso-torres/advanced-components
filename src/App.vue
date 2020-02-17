@@ -8,7 +8,9 @@
 
     <p>{{ componenteSelecionado }}</p>
 
-    <component :is="componenteSelecionado"></component>
+    <component 
+      :is="componenteSelecionado"
+      v-bind="propsAtuais"></component>
     
     
   </div>
@@ -33,6 +35,13 @@ export default {
         { id: 1, titulo: 'Components no Vue', conteudo: 'Componentes são uma das peças mais importantes no vue', autor: 'Tarciso Torres'},
         { id: 2, titulo: 'Distribuindo conteúdo com Slots', conteudo: 'Slots podem ser usados como repositórios de código HTML', autor: 'Tarciso Torres'}
       ]
+    }
+  },
+  computed: {
+    propsAtuais() {
+      return this.componenteSelecionado === 'PostLista'
+        ? { posts: this.posts}
+        : {}
     }
   }
 }
